@@ -20,3 +20,15 @@ app.post("/notes", (req,res) => {
 >>OP : "Notes created successfully"
         { title: title ,
         description : description } this will print in the postman terminal
+
+app.patch('/notes/:index',(req,res) => {
+
+    const index = req.param.index
+    const description = req.body.description
+
+    notes [index].description = description
+
+    res.status(202),json({
+        message : "notes updated successfully"
+    })
+})
